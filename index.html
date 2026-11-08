@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Something for You ♡</title>
+
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+
+  <body>
+    <!-- Background decorations -->
+    <div class="ambient ambient-one"></div>
+    <div class="ambient ambient-two"></div>
+
+    <main class="website">
+      <!-- Progress indicator -->
+      <div class="progress">
+        <div id="progressBar"></div>
+      </div>
+
+      <!-- PAGE 1 -->
+      <section class="page active" id="page1">
+        <span class="eyebrow">A little something for you ♡</span>
+
+        <h1>Heyyyy, my princess! <span class="pink">♡</span></h1>
+
+        <p class="message">
+          Hiii, how are you doing? Hope you're having a really beautiful day.
+        </p>
+
+        <p class="message muted">
+          Sooo... I made something for you. And before you ask, yes, you have to
+          go through it 😂
+        </p>
+
+        <button class="primary" onclick="nextPage()">Let's see 👀 →</button>
+      </section>
+
+      <!-- PAGE 2 -->
+      <section class="page" id="page2">
+        <span class="eyebrow">Just a little appreciation</span>
+
+        <h1>First of all... <span class="pink">wow.</span></h1>
+
+        <p class="message">
+          Can we talk about how BEAUTIFULLLLLLL you are for a second? 😭
+        </p>
+
+        <div class="compliment-card">
+          <span>01</span>
+          <h3>Your smile.</h3>
+          <p>Honestly, there's just something about it.</p>
+        </div>
+
+        <div class="compliment-card">
+          <span>02</span>
+          <h3>Your beauty.</h3>
+          <p>Like... how are you actually this pretty?</p>
+        </div>
+
+        <div class="compliment-card">
+          <span>03</span>
+          <h3>You, generally.</h3>
+          <p>It's not just how you look. It's who you are.</p>
+        </div>
+
+        <p class="message muted">And that's just me getting started, btw.</p>
+
+        <button class="primary" onclick="nextPage()">Aww, continue →</button>
+      </section>
+
+      <!-- PAGE 3 -->
+      <section class="page" id="page3">
+        <span class="eyebrow">A little photo moment</span>
+
+        <h1>Look at <span class="pink">you.</span> 🥹</h1>
+
+        <p class="message">
+          I just thought these deserved their own little moment.
+        </p>
+
+        <!-- GALLERY START -->
+        <div class="gallery">
+          <div class="media-card">
+            <img
+              src="./Images/WhatsApp Image 2026-11-07 at 11.29.11 PM.jpeg"
+              alt="A picture of you"
+            />
+            <p>You and I ♡</p>
+          </div>
+
+          <div class="media-card">
+            <img
+              src="./Images/WhatsApp Image 2026-11-07 at 11.29.12 PM.jpeg"
+              alt="Another picture of you"
+            />
+            <p>Actually unreal. ♡</p>
+          </div>
+
+          <div class="media-card">
+            <img
+              src="./Images/WhatsApp Image 2026-11-08 at 12.38.51 PM.jpeg"
+              alt="Another picture of you"
+            />
+            <p>How are you this pretty? ♡</p>
+          </div>
+
+          <div class="media-card">
+            <img
+              src="./Images/WhatsApp Image 2026-11-08 at 12.59.12 PM.jpeg"
+              alt="Another picture of you"
+            />
+            <p>Gorgeous!! ♡</p>
+          </div>
+        </div>
+        <!-- GALLERY END -->
+
+        <p class="message muted">
+          Yes, I was admiring these while making this website.
+        </p>
+
+        <!-- NEXT BUTTON -->
+        <button class="primary" onclick="nextPage()">Okay, next 😂 →</button>
+      </section>
+
+      <!-- PAGE 4 -->
+      <section class="page" id="page4">
+        <span class="eyebrow">Before we get to the point...</span>
+
+        <h1>Mini challenge <span class="pink">♡</span></h1>
+
+        <p class="message">Let's see if you can guess what I'm thinking.</p>
+
+        <div class="quiz-card">
+          <h3>What do you think I appreciate most about you?</h3>
+
+          <button class="option" onclick="answerQuiz(0)">Your smile</button>
+
+          <button class="option" onclick="answerQuiz(1)">
+            Your personality
+          </button>
+
+          <button class="option" onclick="answerQuiz(2)">
+            Everything, honestly
+          </button>
+
+          <p id="quizFeedback"></p>
+        </div>
+
+        <button class="primary" id="quizNext" onclick="nextPage()" disabled>
+          One last thing... →
+        </button>
+      </section>
+
+      <!-- PAGE 5 -->
+      <section class="page" id="page5">
+        <span class="eyebrow">Okay... here's the thing.</span>
+
+        <h1>So, listen... <span class="pink">♡</span></h1>
+
+        <p class="message">
+          I know we're not in the same country right now, and I know distance
+          isn't exactly the easiest thing.
+        </p>
+
+        <p class="message">
+          But honestly, getting to know you has become something I genuinely
+          appreciate.
+        </p>
+
+        <p class="message">
+          And I don't want to leave things at just whatever this is between us. 
+        </p>
+
+        <p class="message">
+          I'd really like us to take that next step and make it official.
+        </p>
+
+        <div class="final-question">
+          <span class="heart">♡</span>
+
+          <h2>Would you be my girlfriend?</h2>
+
+          <div class="final-buttons">
+            <button class="primary" onclick="sayYes()">Yes! ❤️</button>
+
+            <button class="secondary" onclick="sayTalk()">
+              Let's talk about it ♡
+            </button>
+          </div>
+        </div>
+
+        <div id="finalResponse" class="hidden"></div>
+      </section>
+    </main>
+
+    <footer>Made with love, just for you. ♡</footer>
+
+    <!-- MEDIA OVERLAY -->
+    <div id="mediaOverlay" class="media-overlay">
+      <button id="closeOverlay" class="close-overlay">&times;</button>
+
+      <div id="overlayContent" class="overlay-content"></div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

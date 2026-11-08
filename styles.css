@@ -1,0 +1,634 @@
+
+/* =========================
+   GENERAL STYLING
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --background: #171717;
+    --card: #242424;
+    --card-border: #353535;
+    --pink: #e9a0b5;
+    --pink-light: #f4c3d1;
+    --text: #f5f0ee;
+    --muted: #aaa3a5;
+}
+
+body {
+    background: var(--background);
+    color: var(--text);
+    font-family: "Segoe UI", sans-serif;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 35px 18px;
+    overflow-x: hidden;
+}
+
+/* =========================
+   BACKGROUND EFFECTS
+========================= */
+
+.ambient {
+    position: fixed;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: 0.12;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.ambient-one {
+    background: #e77d9d;
+    top: -100px;
+    left: -100px;
+}
+
+.ambient-two {
+    background: #8d638d;
+    bottom: -100px;
+    right: -100px;
+}
+
+/* =========================
+   WEBSITE CONTAINER
+========================= */
+
+.website {
+    width: 100%;
+    max-width: 680px;
+    margin: auto;
+    background: rgba(31, 31, 31, 0.95);
+    border: 1px solid var(--card-border);
+    border-radius: 24px;
+    padding: 35px;
+    box-shadow: 0 20px 70px rgba(0, 0, 0, 0.2);
+}
+
+/* =========================
+   PROGRESS BAR
+========================= */
+
+.progress {
+    height: 4px;
+    width: 100%;
+    background: #383838;
+    border-radius: 10px;
+    margin-bottom: 35px;
+    overflow: hidden;
+}
+
+#progressBar {
+    width: 20%;
+    height: 100%;
+    background: var(--pink);
+    border-radius: 10px;
+    transition: width 0.5s ease;
+}
+
+/* =========================
+   PAGE NAVIGATION
+========================= */
+
+.page {
+    display: none;
+    text-align: center;
+    animation: appear 0.6s ease;
+}
+
+.page.active {
+    display: block;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================
+   TEXT
+========================= */
+
+.eyebrow {
+    display: block;
+    color: var(--pink);
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    line-height: 1.3;
+    margin-bottom: 25px;
+}
+
+.pink {
+    color: var(--pink);
+}
+
+.message {
+    font-size: 1.05rem;
+    line-height: 1.9;
+    margin-bottom: 20px;
+}
+
+.muted {
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.primary {
+    background: var(--pink);
+    color: #25191d;
+    border: none;
+    border-radius: 50px;
+    padding: 14px 28px;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 25px;
+}
+
+.primary:hover {
+    background: var(--pink-light);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(233, 160, 181, 0.15);
+}
+
+.primary:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.secondary {
+    background: transparent;
+    color: var(--text);
+    border: 1px solid #555;
+    border-radius: 50px;
+    padding: 13px 22px;
+    font-size: 0.95rem;
+}
+
+.secondary:hover {
+    background: #303030;
+}
+
+/* =========================
+   COMPLIMENT CARDS
+========================= */
+
+.compliment-card {
+    text-align: left;
+    padding: 20px;
+    margin: 15px 0;
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    transition: 0.3s ease;
+}
+
+.compliment-card:hover {
+    border-color: var(--pink);
+    transform: translateY(-3px);
+}
+
+.compliment-card span {
+    color: var(--pink);
+    font-size: 0.8rem;
+}
+
+.compliment-card h3 {
+    margin: 8px 0;
+    font-size: 1.1rem;
+}
+
+.compliment-card p {
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+
+/* =========================
+   MEDIA GALLERY
+========================= */
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin: 30px 0;
+}
+
+.media-card {
+    background: var(--card);
+    padding: 10px;
+    border-radius: 16px;
+    border: 1px solid var(--card-border);
+    overflow: hidden;
+    transition: 0.3s ease;
+}
+
+.media-card:hover {
+    border-color: var(--pink);
+    transform: translateY(-3px);
+}
+
+.media-card img,
+.media-card video {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+    background: #111;
+}
+
+.media-card video {
+    object-fit: contain;
+}
+
+.media-card p {
+    color: var(--pink-light);
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin: 12px 4px 5px;
+}
+
+
+/* =========================
+   MEDIA GALLERY
+========================= */
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin: 30px 0;
+}
+
+.media-card {
+    background: var(--card);
+    padding: 10px;
+    border-radius: 16px;
+    border: 1px solid var(--card-border);
+    overflow: hidden;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.media-card:hover {
+    border-color: var(--pink);
+    transform: translateY(-3px);
+}
+
+.media-card img,
+.media-card video {
+    width: 100%;
+    height: 220px;
+    object-fit: contain; /* no cropping */
+    border-radius: 10px;
+    display: block;
+    background: #111;
+}
+
+.media-card p {
+    color: var(--pink-light);
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin: 12px 4px 5px;
+}
+
+/* =========================
+   MEDIA OVERLAY
+========================= */
+
+.media-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.92);
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    padding: 25px;
+    z-index: 9999;
+}
+
+.media-overlay.show {
+    display: flex;
+}
+
+.overlay-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlay-content img,
+.overlay-content video {
+    max-width: 95%;
+    max-height: 85vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 12px;
+}
+
+/* Close button */
+.close-overlay {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+
+    background: #292929;
+    color: white;
+    border: none;
+    border-radius: 50%;
+
+    width: 45px;
+    height: 45px;
+    font-size: 30px;
+
+    cursor: pointer;
+    z-index: 10000;
+}
+
+.close-overlay:hover {
+    background: var(--pink);
+    color: #171717;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+
+    .gallery {
+        gap: 10px;
+    }
+
+    .media-card {
+        padding: 7px;
+    }
+
+    .media-card img,
+    .media-card video {
+        height: 160px;
+    }
+
+    .overlay-content img,
+    .overlay-content video {
+        max-width: 100%;
+        max-height: 80vh;
+    }
+}
+
+
+
+/* =========================
+   QUIZ
+========================= */
+
+.quiz-card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 18px;
+    padding: 25px 20px;
+    margin-top: 25px;
+}
+
+.quiz-card h3 {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.option {
+    display: block;
+    width: 100%;
+    background: #303030;
+    color: var(--text);
+    border: 1px solid #444;
+    padding: 14px;
+    border-radius: 12px;
+    margin: 10px 0;
+    font-size: 0.95rem;
+}
+
+.option:hover {
+    border-color: var(--pink);
+    background: #383033;
+}
+
+#quizFeedback {
+    color: var(--pink);
+    margin-top: 15px;
+    line-height: 1.6;
+}
+
+/* =========================
+   FINAL QUESTION
+========================= */
+
+.final-question {
+    margin-top: 35px;
+    padding: 30px 20px;
+    background: linear-gradient(
+        145deg,
+        #30252b,
+        #252125,
+        #242424
+    );
+    border: 1px solid #57404a;
+    border-radius: 20px;
+}
+
+.heart {
+    display: block;
+    font-size: 3rem;
+    color: var(--pink);
+    margin-bottom: 15px;
+    animation: heartbeat 2s infinite;
+}
+
+.final-question h2 {
+    font-size: 1.7rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.final-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.final-buttons button {
+    width: 100%;
+    max-width: 280px;
+    margin: 10px;
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.12);
+    }
+}
+
+/* =========================
+   FINAL RESPONSE
+========================= */
+
+.hidden {
+    display: none;
+}
+
+#finalResponse {
+    margin-top: 30px;
+    padding: 25px;
+    border-radius: 18px;
+    background: var(--card);
+    animation: appear 0.7s ease;
+}
+
+#finalResponse h2 {
+    color: var(--pink);
+    margin-bottom: 15px;
+}
+
+#finalResponse p {
+    color: var(--muted);
+    line-height: 1.8;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    text-align: center;
+    color: #827a7d;
+    font-size: 0.85rem;
+    margin-top: 25px;
+}
+
+
+/* All pages */
+.page {
+    display: none;
+    text-align: center;
+}
+
+.page.active {
+    display: block;
+}
+
+/* Gallery only */
+#page3 .gallery {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin: 30px 0;
+}
+
+/* Overlay stays hidden until media is clicked */
+.media-overlay {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.92);
+    z-index: 9999;
+}
+
+.media-overlay.show {
+    display: flex;
+}
+
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 20px 12px;
+    }
+
+    .website {
+        padding: 25px 18px;
+        border-radius: 20px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .message {
+        font-size: 0.97rem;
+    }
+
+    .gallery {
+        gap: 10px;
+    }
+
+    .compliment-card {
+        padding: 17px;
+    }
+
+    .final-question h2 {
+        font-size: 1.4rem;
+    }
+
+    .primary {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 380px) {
+
+    h1 {
+        font-size: 1.7rem;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+}
