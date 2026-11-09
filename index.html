@@ -171,7 +171,7 @@
         </p>
 
         <p class="message">
-          And I don't want to leave things at just whatever this is between us. 
+          And I don't want to leave things at just whatever this is between us.
         </p>
 
         <p class="message">
@@ -184,15 +184,40 @@
           <h2>Would you be my girlfriend?</h2>
 
           <div class="final-buttons">
-            <button class="primary" onclick="sayYes()">Yes! ❤️</button>
-
-            <button class="secondary" onclick="sayTalk()">
-              Let's talk about it ♡
+            <button class="primary" onclick="goToPage('page6')">YES 💗</button>
+            <button class="secondary" onclick="goToPage('page7')">
+              Umm, let's talk 💌
             </button>
           </div>
         </div>
+      </section>
 
-        <div id="finalResponse" class="hidden"></div>
+      <!-- YES PAGE -->
+      <section class="page" id="page6">
+        <div class="yes-content">
+          <h1>WAIT... YOU SAID YES?! 💗</h1>
+          <p>Okay, I'm sooo happy right now. I Love you! 🥹</p>
+          <div class="big-heart">♡</div>
+          <p>Here's to something beautiful. 💕</p>
+        </div>
+        <button class="primary" onclick="goToPage('page1')">
+          Back to the beginning ♡
+        </button>
+      </section>
+
+      <!-- LET'S TALK PAGE -->
+      <section class="page" id="page7">
+        <div class="talk-content">
+          <h1>Hey, you. 💜</h1>
+          <p>It's okay. Take your time.</p>
+          <p>You're genuinely special to me.</p>
+          <p>
+            Whatever your answer is, I'm glad I got to tell you how I feel. ♡
+          </p>
+        </div>
+        <button class="primary" onclick="goToPage('page1')">
+          Back to the beginning ♡
+        </button>
       </section>
     </main>
 

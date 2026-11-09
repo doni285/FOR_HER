@@ -581,6 +581,58 @@ footer {
 }
 
 
+/* YES PAGE */
+#page6 {
+  background: linear-gradient(135deg, #ffb6c9, #ffcce5, #f6b8ff);
+  color: #7b214f;
+  min-height: 80vh;
+  padding: 50px 25px;
+  border-radius: 25px;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* LET'S TALK PAGE */
+#page7 {
+  background: linear-gradient(135deg, #c9b6ff, #e4c9ff, #b8d4ff);
+  color: #44336f;
+  min-height: 80vh;
+  padding: 50px 25px;
+  border-radius: 25px;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* When activated */
+#page6.active,
+#page7.active {
+  display: flex;
+}
+
+.yes-content,
+.talk-content {
+  max-width: 600px;
+  text-align: center;
+  margin: auto;
+}
+
+.big-heart {
+  font-size: 100px;
+  color: #ff4f91;
+  animation: heartbeat 1.2s infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}
+
+
+
 /* =========================
    RESPONSIVE DESIGN
 ========================= */
